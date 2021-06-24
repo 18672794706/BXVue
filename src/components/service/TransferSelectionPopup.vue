@@ -114,7 +114,7 @@ export default {
     },
     toggle(item) {
       this.result = item;
-      //点击直接选中
+      //点击直接选中   1231
       // this.$emit("confirm", this.result);
       // this.$emit("input", false);
     },
