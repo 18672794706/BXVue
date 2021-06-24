@@ -3,7 +3,7 @@ import request from "../utils/request.js";
 const Token = window.token || process.env.VUE_APP_TOKEN || "";
 const url = "/BXPortal/BXInterface/AppInterface.ashx";
 
-// 获取数据方法 123123
+// 获取数据方法
 function getdata(Method, method, Data) {
   return request({
     url,
