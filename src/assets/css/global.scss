@@ -1,0 +1,312 @@
+@import url("./reset.css");
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.van-grid-item__text{
+  font-size: 12px;
+}
+
+.van-info {
+  border: 0;
+}
+
+.van-pull-refresh {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.van-list{
+  padding-top: 1px;
+}
+
+.text-placeholder {
+  color: #bbbbbb;
+}
+
+// 跟随文本的块级提交/确认按钮
+.block-btn-wrap {
+  width: calc(100% - 30px);
+  margin: 45px 15px 20px;
+
+  .van-button+.van-button{
+    margin-top: 15px;
+  }
+}
+
+// 弹窗中的搜索按钮
+.popup-search-btn {
+  width: calc(100% - 30px);
+  margin: 20px 15px 10px;
+}
+
+// 列表底部的操作按钮
+.operate-btn {
+  background-color: #f2f3f5;
+  border-radius: 2px;
+  border: 1px solid #dcdde0;
+  box-sizing: border-box;
+  color: #333333;
+  font-size: 13px;
+
+  &:active {
+    background-color: #dcdee0;
+  }
+}
+
+// 搜索+下拉的列表结构
+.push-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f4f6f9;
+  display: flex;
+  flex-direction: column;
+
+  .van-pull-refresh {
+    flex: 1;
+  }
+}
+
+// 列表-任务卡片
+.gm-list-card {
+  margin-top: 10px;
+  position: relative;
+
+  .fix-tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 48px;
+    line-height: 1.2;
+    text-align: center;
+    display: inline-block;
+
+    &.van-tag--danger {
+      color: #eb2d2d;
+      background-color: #ffe1e1;
+    }
+  }
+
+  .gm-list-card-header {
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    .van-cell__value {
+      color: #999;
+      font-size: 13px;
+    }
+
+    .van-cell__title {
+      color: #333;
+      flex: initial;
+    }
+
+    .van-tag {
+      padding: 1px 6px;
+
+      &:not(:first-child) {
+        margin-left: 5px;
+      }
+      &.van-tag--danger {
+        color: #e80e0e;
+        background-color: #fff6f6;
+        border: #f19c9c;
+      }
+    }
+  }
+
+  .cont-title {
+    font-size: 16px;
+    color: #333333;
+    margin-bottom: 5px;
+  }
+
+  .cont-desc {
+    li {
+      color: #666666;
+    }
+  }
+
+  .gm-list-card-footer {
+    .van-button + .van-button {
+      margin-left: 10px;
+    }
+    .van-cell__value--alone {
+      text-align: right;
+    }
+    .van-button--default {
+      color: #666;
+    }
+  }
+}
+
+// 文字状态
+.status-text {
+  display: inline-block;
+  font-size: 13px;
+  line-height: 14px;
+
+  &.success {
+    color: #07ad34;
+  }
+
+  &.danger {
+    color: #e80e0e;
+  }
+
+  &.warning {
+    color: yellow;
+  }
+
+  i {
+    vertical-align: top;
+  }
+
+  &:not(:first-child) {
+    margin-left: 5px;
+  }
+}
+
+// 文本cell
+.text-cell {
+  padding: 4px 0;
+
+  &::after {
+    display: none;
+  }
+
+  .van-cell__value {
+    color: #333;
+  }
+
+  .van-cell__title {
+    flex: initial;
+  }
+}
+
+// 任务处理界面
+.task-handle-popup {
+  display: flex;
+  flex-direction: column;
+
+  .handle-cont {
+    flex: 1;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .handle-footer {
+    padding: 15px 20px;
+  }
+}
+
+// 任务处理-选人界面
+.task-selection-popup {
+  display: flex;
+  flex-direction: column;
+
+  .desc-tool {
+    color: #999999;
+    padding: 0 15px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #f2f5fb;
+    font-size: 13px;
+
+    .desc-tool-item {
+      .van-badge--dot {
+        margin-right: 8px;
+      }
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  .pick-list {
+    min-height: 176px;
+    max-height: 352px;
+    flex: 1;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .van-badge--dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .select-cell {
+    color: #1364e1;
+  }
+
+  .right-area {
+    padding-left: 5px;
+    .van-icon {
+      vertical-align: bottom;
+    }
+  }
+}
+
+// 列表-带边框小卡片
+.gm-border-card {
+  border: 1px solid #dddddd;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+
+  .gm-border-card-header {
+    .van-cell__title {
+      font-size: 16px;
+      color: #333;
+    }
+
+    &::after {
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .text-row {
+    font-size: 15px;
+    padding: 0 15px;
+    font-size: 14px;
+    color: #666666;
+    margin: 8px 0;
+  }
+}
+
+// nav-bar
+.gm-nav-bar {
+  box-shadow: 0px -1px 6px 0px rgba(0, 0, 0, 0.12);
+
+  .van-icon-arrow-left {
+    color: #ccc;
+  }
+  .van-nav-bar__text {
+    font-size: 16px;
+    color: #000;
+  }
+}
+
+// 底部固定按钮
+.btns-fixed-bottom {
+  padding: 15px 20px;
+  background-color: #fff;
+  box-shadow: 0px -1px 6px 0px rgba(0, 0, 0, 0.12);
+}
